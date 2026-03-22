@@ -1,23 +1,27 @@
 import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import react from 'eslint-plugin-react'
+import hooks from 'eslint-plugin-react-hooks'
+import a11y from 'eslint-plugin-jsx-a11y'
+import prettier from 'eslint-config-prettier'
 
-export default defineConfig([
-  globalIgnores(['dist']),
+export default [
+  js.configs.recommended,
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+    plugins: {
+      react,
+      'react-hooks': hooks,
+      'jsx-a11y': a11y,
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...hooks.configs.recommended.rules,
+      ...a11y.configs.recommended.rules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
-])
+  prettier,
+]
