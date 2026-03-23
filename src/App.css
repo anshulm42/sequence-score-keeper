@@ -1,41 +1,40 @@
-
 .scrolling-bg {
-	position: relative;
-	min-height: 100vh;
-	overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .scrolling-bg::before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	opacity: 0.3;
-	z-index: 0;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 .scrolling-bg::after {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: url('./assets/sequence_logo.png') ;
-	background-repeat: repeat;
-	opacity: 0.3;
-	z-index: 0;
-	pointer-events: none;
-	animation: scroll-bg-img 15s linear infinite;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('./assets/sequence_logo.png');
+  background-repeat: repeat;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+  animation: scroll-bg-img 15s linear infinite;
 }
 
 @keyframes scroll-bg-img {
-	0% {
-		background-position: 0 0;
-	}
-	100% {
-		background-position: 1000px 1000px;
-	}
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
 }
