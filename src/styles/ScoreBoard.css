@@ -12,3 +12,17 @@
   text-align: center;
   padding: 100px;
 }
+
+@font-face {
+  font-family: 'Henny Penny';
+  src: url('/fonts/HennyPenny-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Imperial Script';
+  src: url('/fonts/ImperialScript-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+.scoreboard-score-card {
+  color: #0153a2;
+}

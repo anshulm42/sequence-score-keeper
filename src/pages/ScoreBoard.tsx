@@ -1,6 +1,6 @@
 // pages/Home.tsx
 
-import { Container, Grid, Image, Title } from '@mantine/core'
+import { Container, Grid, Image, Space, Title } from '@mantine/core'
 import logo from '../assets/sequence_logo_solid.png'
 import '../styles/ScoreBoard.css'
 import confetti from 'canvas-confetti'
@@ -59,7 +59,22 @@ export default function ScoreBoard() {
       </Grid.Col>
       <Grid.Col span={8} className="scoreboard-col">
         <Container className="scoreboard-score-card">
-          <Title>Current Score</Title>
+          <Title size={'84px'}>Current Score</Title>
+          <Space h="lg" />
+          <Grid columns={2} className="scoreboard-score-grid">
+            <Grid.Col span={1} className="scoreboard-score-col">
+              <Title ff={'Henny Penny'} size={'64px'}>
+                Da Boys
+              </Title>
+              <Title size={'64px'}>10</Title>
+            </Grid.Col>
+            <Grid.Col span={1} className="scoreboard-score-col">
+              <Title ff={'Imperial Script'} size={'64px'}>
+                Ladies
+              </Title>
+              <Title size={'64px'}>15</Title>
+            </Grid.Col>
+          </Grid>
         </Container>
       </Grid.Col>
       <Grid.Col span={8} className="scoreboard-col">
