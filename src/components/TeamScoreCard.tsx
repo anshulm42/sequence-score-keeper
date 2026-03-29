@@ -10,7 +10,7 @@ interface TeamScoreCardProps {
 function TeamScoreCard({ teamName, score, fontFamily }: TeamScoreCardProps) {
   return (
     <Stack maw={'600px'} miw={'400px'}>
-      <Title ff={fontFamily} size={'54px'}>
+      <Title ff={fontFamily} size={fontFamily === 'Imperial Script' ? '65px' : '54px'}>
         {teamName}
       </Title>
       <Grid columns={10} align="center" content={'center'}>

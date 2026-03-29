@@ -71,19 +71,6 @@ export default function ScoreBoard() {
           </Grid>
         </Stack>
       </Grid.Col>
-      <Grid.Col span={8} className="scoreboard-col">
-        <Stack gap={'xl'} justify={'space-around'} className="scoreboard-score-card">
-          <Title size={'76px'}>Tournament Score</Title>
-          <Grid columns={2} className="scoreboard-score-grid">
-            <Grid.Col span={1} className="scoreboard-score-col">
-              <TeamScoreCard teamName="Da Boys" score={10} fontFamily="Henny Penny" />
-            </Grid.Col>
-            <Grid.Col span={1} className="scoreboard-score-col">
-              <TeamScoreCard teamName="Ladies" score={10} fontFamily="Imperial Script" />
-            </Grid.Col>
-          </Grid>
-        </Stack>
-      </Grid.Col>
     </Grid>
   )
 }
