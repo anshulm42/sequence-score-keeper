@@ -1,9 +1,10 @@
 // pages/Home.tsx
 
-import { Container, Grid, Image, Space, Title } from '@mantine/core'
+import { Grid, Image, Stack, Title } from '@mantine/core'
 import logo from '../assets/sequence_logo_solid.png'
 import '../styles/ScoreBoard.css'
 import confetti from 'canvas-confetti'
+import TeamScoreCard from '../components/TeamScoreCard'
 
 const celebrate = () => {
   var duration = 10 * 1000
@@ -58,27 +59,30 @@ export default function ScoreBoard() {
         <Image h={100} src={logo} fit="contain" alt="Sequence Logo" />
       </Grid.Col>
       <Grid.Col span={8} className="scoreboard-col">
-        <Container className="scoreboard-score-card">
-          <Title size={'84px'}>Current Score</Title>
-          <Space h="lg" />
+        <Stack gap={'xl'} justify={'space-around'} className="scoreboard-score-card">
+          <Title size={'76px'}>Current Score</Title>
           <Grid columns={2} className="scoreboard-score-grid">
             <Grid.Col span={1} className="scoreboard-score-col">
-              <Title ff={'Henny Penny'} size={'64px'}>
-                Da Boys
-              </Title>
-              <Title size={'64px'}>10</Title>
+              <TeamScoreCard teamName="Da Boys" score={10} fontFamily="Henny Penny" />
             </Grid.Col>
             <Grid.Col span={1} className="scoreboard-score-col">
-              <Title ff={'Imperial Script'} size={'64px'}>
-                Ladies
-              </Title>
-              <Title size={'64px'}>15</Title>
+              <TeamScoreCard teamName="Ladies" score={10} fontFamily="Imperial Script" />
             </Grid.Col>
           </Grid>
-        </Container>
+        </Stack>
       </Grid.Col>
       <Grid.Col span={8} className="scoreboard-col">
-        <Title>Tournament Score</Title>
+        <Stack gap={'xl'} justify={'space-around'} className="scoreboard-score-card">
+          <Title size={'76px'}>Tournament Score</Title>
+          <Grid columns={2} className="scoreboard-score-grid">
+            <Grid.Col span={1} className="scoreboard-score-col">
+              <TeamScoreCard teamName="Da Boys" score={10} fontFamily="Henny Penny" />
+            </Grid.Col>
+            <Grid.Col span={1} className="scoreboard-score-col">
+              <TeamScoreCard teamName="Ladies" score={10} fontFamily="Imperial Script" />
+            </Grid.Col>
+          </Grid>
+        </Stack>
       </Grid.Col>
     </Grid>
   )

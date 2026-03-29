@@ -26,3 +26,8 @@
 .scoreboard-score-card {
   color: #0153a2;
 }
+
+.scoreboard-score-col {
+  justify-content: space-around;
+  justify-items: center;
+}
